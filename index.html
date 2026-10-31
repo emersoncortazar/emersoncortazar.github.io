@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emerson Cortazar</title>
+  <meta name="description" content="Emerson Cortazar is an electrical and computer engineering student at Duke, working on power systems, industrial controls, robotics and software.">
+  <meta property="og:title" content="Emerson Cortazar">
+  <meta property="og:description" content="Electrical and computer engineering at Duke. Power systems, industrial controls, robotics and software.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://emersoncortazar.com/">
+  <meta property="og:image" content="https://emersoncortazar.com/assets/img/microgrid.webp">
+  <link rel="canonical" href="https://emersoncortazar.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <script>
+    try {
+      var savedTheme = localStorage.getItem('theme');
+      if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#work">Skip to work</a>
+
+  <header class="top">
+    <a class="top-name" href="#top">E. Cortazar</a>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#software">Software</a>
+      <a href="#contact">Contact</a>
+      <button id="theme-toggle" type="button" hidden>Theme</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <div class="bus" aria-hidden="true"><div class="bus-live"></div></div>
+
+    <section class="hero">
+      <div class="hero-text">
+        <p class="label">Duke Pratt School of Engineering, Class of 2028</p>
+        <h1>Emerson<br>Cortazar</h1>
+        <p class="lede">I study electrical and computer engineering. I've drawn the as-built electrical set for a solar water system in Eswatini, wired enclosures for a 1.2&nbsp;MW microgrid, and designed a robot cell for picking axle parts. I also write software, including tools that measure how machine learning models behave.</p>
+      </div>
+      <img class="portrait" src="assets/img/portrait.webp" width="1000" height="1500" alt="Portrait of Emerson Cortazar in a navy blazer, in front of a stone archway at Duke.">
+    </section>
+
+    <section class="title-block" aria-label="Summary and sheet index">
+      <dl class="tb-facts">
+        <div><dt>Studies</dt><dd>Electrical &amp; Computer Engineering, Public Policy</dd></div>
+        <div><dt>Contact</dt><dd><a href="mailto:efc19@duke.edu">efc19@duke.edu</a></dd></div>
+        <div><dt>Code</dt><dd><a href="https://github.com/emersoncortazar">github.com/emersoncortazar</a></dd></div>
+        <div><dt>Full set</dt><dd><a href="Emerson_Cortazar_Duke_%2728_Portfolio.pdf">Portfolio PDF</a></dd></div>
+      </dl>
+      <div class="tb-index">
+        <p class="label">Sheet index</p>
+        <ol>
+          <li><a href="#eswatini"><span>01</span> Solar water system</a></li>
+          <li><a href="#microgrid"><span>02</span> 1.2 MW microgrid</a></li>
+          <li><a href="#robot"><span>03</span> FANUC robot cell</a></li>
+          <li><a href="#panels"><span>04</span> Hydraulic control panels</a></li>
+          <li><a href="#manual"><span>05</span> DC microgrid manual</a></li>
+          <li><a href="#software"><span>06</span> Software</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <div id="work">
+      <section class="sheet" id="eswatini">
+        <header class="sheet-head">
+          <p class="label">Sheet 01 of 06</p>
+          <h2>Solar water system, Eswatini</h2>
+        </header>
+        <div class="sheet-intro">
+          <p>I designed the full electrical system for a solar-powered water pump and filtration installation at Herefords Primary School. That covered the one-line diagram, the termination drawings, and the conduit and wire schedule. The drawings were issued as-built in August 2025.</p>
+          <dl class="spec">
+            <div><dt>Array</dt><dd>1.65 kW, 3 modules</dd></div>
+            <div><dt>Project</dt><dd>WSZ-WP003</dd></div>
+            <div><dt>Drawn by</dt><dd>EFC</dd></div>
+            <div><dt>Status</dt><dd>Rev C as-built, 13 Aug 2025</dd></div>
+          </dl>
+        </div>
+        <figure class="drawing">
+          <a href="assets/img/eswatini-drawing.webp">
+            <img src="assets/img/eswatini-drawing.webp" width="1583" height="1114" loading="lazy" alt="Termination electrical drawing showing the pump controller, float switch, breakers, conduit runs and three solar modules, with a title block for Herefords Primary School.">
+          </a>
+          <figcaption>Drawing 10, electrical details. Select to open at full size.</figcaption>
+        </figure>
+        <div class="gallery">
+          <figure class="g-wide"><img src="assets/img/eswatini-site.webp" width="1130" height="745" loading="lazy" alt="The project crew resting on a trench beside green water storage tanks."></figure>
+          <figure><img src="assets/img/eswatini-array.webp" width="853" height="770" loading="lazy" alt="The Duke team holding a Duke flag beneath the pole-mounted solar array."></figure>
+          <figure><img src="assets/img/eswatini-wiring.webp" width="1105" height="699" loading="lazy" alt="Team member in a hard hat wiring contactors and terminals in an open enclosure."></figure>
+          <figure><img src="assets/img/eswatini-testing.webp" width="1061" height="769" loading="lazy" alt="Team members in hard hats checking readings on a handheld meter on site."></figure>
+          <figure><img src="assets/img/eswatini-enclosure.webp" width="1085" height="768" loading="lazy" alt="Three team members smiling as they look over a small electrical enclosure."></figure>
+        </div>
+      </section>
+
+      <section class="sheet sheet-split" id="microgrid">
+        <header class="sheet-head">
+          <p class="label">Sheet 02 of 06</p>
+          <h2>1.2 megawatt microgrid</h2>
+        </header>
+        <div class="sheet-intro">
+          <p>I was on the assembly team for a 1.2 MW microgrid for manufacturers and small-scale data centers, building and wiring power distribution and control enclosures to schematic.</p>
+          <dl class="spec">
+            <div><dt>Capacity</dt><dd>1.2 MW</dd></div>
+            <div><dt>Role</dt><dd>Assembly team</dd></div>
+          </dl>
+        </div>
+        <figure class="sheet-img"><img src="assets/img/microgrid.webp" width="1600" height="1200" loading="lazy" alt="A row of white power cabinets on a steel skid inside a manufacturing shop."></figure>
+      </section>
+
+      <section class="sheet sheet-split sheet-flip" id="robot">
+        <header class="sheet-head">
+          <p class="label">Sheet 03 of 06</p>
+          <h2>FANUC robot cell</h2>
+        </header>
+        <div class="sheet-intro">
+          <p>I designed an automated bin-picking cell for Toyota axle parts. I configured the 3D vision system to detect parts in bins, programmed the robot's motion onto production conveyors, and simulated the full cell in RoboGuide, including its safety perimeter and interference zones.</p>
+          <dl class="spec">
+            <div><dt>Robot</dt><dd>FANUC CRX-30iA</dd></div>
+            <div><dt>Simulation</dt><dd>RoboGuide</dd></div>
+          </dl>
+        </div>
+        <figure class="sheet-img"><img src="assets/img/robot-cell.webp" width="1456" height="816" loading="lazy" alt="RoboGuide simulation of a robot arm between two part bins and a conveyor, surrounded by safety fencing."></figure>
+      </section>
+
+      <section class="sheet sheet-split" id="panels">
+        <header class="sheet-head">
+          <p class="label">Sheet 04 of 06</p>
+          <h2>Hydraulic control panels</h2>
+        </header>
+        <div class="sheet-intro">
+          <p>I built industrial control panels for the hydraulic power units that operate heavy manufacturing equipment, wiring them to electrical schematics, including wire sizing and terminal layout.</p>
+        </div>
+        <figure class="sheet-img sheet-img-tall"><img src="assets/img/panel.webp" width="1000" height="1333" loading="lazy" alt="A finished control panel on a workbench with its door open, showing wired terminals and breakers."></figure>
+      </section>
+
+      <section class="sheet sheet-split sheet-flip" id="manual">
+        <header class="sheet-head">
+          <p class="label">Sheet 05 of 06</p>
+          <h2>DC microgrid manual</h2>
+        </header>
+        <div class="sheet-intro">
+          <p>I wrote the user manual for AEG's DC microgrid product, detailing component specifications, system operation and installation requirements.</p>
+        </div>
+        <div class="pair">
+          <figure><img src="assets/img/manual-cover.webp" width="731" height="946" loading="lazy" alt="Cover of the AEG DC Microgrid User Manual, with a photo of the installed equipment."></figure>
+          <figure><img src="assets/img/manual-page.webp" width="705" height="805" loading="lazy" alt="Manual page with breaker terminal tables, safety notes and testing procedures."></figure>
+        </div>
+      </section>
+    </div>
+
+    <section class="sheet" id="software">
+      <header class="sheet-head">
+        <p class="label">Sheet 06 of 06</p>
+        <h2>Software</h2>
+      </header>
+      <ul class="repos">
+        <li>
+          <h3><a href="https://github.com/emersoncortazar/green-attention-bench">GreenAttentionBench</a></h3>
+          <p>A benchmarking suite for long-context LLM inference on consumer hardware. It sweeps prompt size and context length, then records time to first token, throughput and peak memory. Peak memory scaled linearly with context length.</p>
+          <p class="stack">Python, llama.cpp</p>
+        </li>
+        <li>
+          <h3><a href="https://github.com/emersoncortazar/air-traffic-conflict-ml">Air traffic conflict ML</a></h3>
+          <p>A simulation-driven pipeline comparing kinematic baselines with LSTM and Transformer models for short-horizon conflict risk estimation under noisy airspace conditions.</p>
+          <p class="stack">Python</p>
+        </li>
+        <li>
+          <h3><a href="https://emersoncortazar.github.io/emerson-dictionary/">Emerson's Dictionary</a></h3>
+          <p>A browser tool that pulls rare words out of your reading, shows them in context, and builds a personal dictionary. Everything runs client-side.</p>
+          <p class="stack">TypeScript, JavaScript</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="label">Contact</p>
+      <p class="contact-mail"><a href="mailto:efc19@duke.edu">efc19@duke.edu</a></p>
+      <p class="contact-links">
+        <a href="https://github.com/emersoncortazar">GitHub</a>
+        <a href="Emerson_Cortazar_Duke_%2728_Portfolio.pdf">Portfolio PDF</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>&copy; 2026 Emerson Cortazar</span>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
