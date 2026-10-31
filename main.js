@@ -1,50 +1,26 @@
-// theme toggle: paper or blueprint
-const toggle = document.getElementById('theme-toggle');
-const root = document.documentElement;
+// draws each page of the cv pdf, since phone browsers often won't show a pdf inline.
+// if this fails, the View CV link above it still opens the file.
+const PDFJS = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/build';
+const pages = document.getElementById('cv-pages');
 
-function isDark() {
-  if (root.dataset.theme) return root.dataset.theme === 'dark';
-  return matchMedia('(prefers-color-scheme: dark)').matches;
+try {
+  const pdfjs = await import(`${PDFJS}/pdf.min.mjs`);
+  pdfjs.GlobalWorkerOptions.workerSrc = `${PDFJS}/pdf.worker.min.mjs`;
+  const pdf = await pdfjs.getDocument(pages.dataset.src).promise;
+
+  for (let n = 1; n <= pdf.numPages; n++) {
+    const page = await pdf.getPage(n);
+    const scale = 1600 / page.getViewport({ scale: 1 }).width;
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    canvas.width = viewport.width;
+    canvas.height = viewport.height;
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', `Page ${n} of Emerson Cortazar's CV. Use the View CV link to open the text.`);
+    pages.append(canvas);
+    // the print intent keeps drawing when the tab is in the background
+    await page.render({ canvasContext: canvas.getContext('2d'), viewport, intent: 'print' }).promise;
+  }
+} catch (error) {
+  console.warn('Could not draw the CV', error);
 }
-
-function showTheme() {
-  toggle.textContent = isDark() ? 'Paper' : 'Blueprint';
-  toggle.setAttribute('aria-label', isDark() ? 'Switch to the paper theme' : 'Switch to the blueprint theme');
-}
-
-toggle.hidden = false;
-showTheme();
-toggle.addEventListener('click', () => {
-  root.dataset.theme = isDark() ? 'light' : 'dark';
-  try {
-    localStorage.setItem('theme', root.dataset.theme);
-  } catch (e) {}
-  showTheme();
-});
-
-// the bus line energizes as you scroll and closes each sheet's node
-const main = document.querySelector('main');
-const live = document.querySelector('.bus-live');
-const nodes = document.querySelectorAll('.sheet, .contact');
-let queued = false;
-
-function energize() {
-  queued = false;
-  const box = main.getBoundingClientRect();
-  const reach = innerHeight * 0.55 - box.top;
-  live.style.transform = `scaleY(${Math.min(Math.max(reach / box.height, 0), 1)})`;
-  nodes.forEach((node) => {
-    node.classList.toggle('is-live', node.getBoundingClientRect().top < innerHeight * 0.55 - 56);
-  });
-}
-
-function queue() {
-  if (queued) return;
-  queued = true;
-  requestAnimationFrame(energize);
-}
-
-addEventListener('scroll', queue, { passive: true });
-addEventListener('resize', queue);
-addEventListener('load', queue);
-energize();
