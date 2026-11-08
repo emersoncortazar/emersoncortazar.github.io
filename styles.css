@@ -95,6 +95,11 @@ h3 { margin: 0; font: 400 1.4375rem/1.3 var(--serif); }
 
 #projects { margin-top: 48px; }
 #projects h2 { margin: 0; padding-bottom: 12px; border-bottom: 2px solid var(--gold); }
+.project { max-width: 40rem; padding-top: 24px; }
+.project p { margin: 0 0 12px; }
+.project .summary { margin-top: 4px; color: var(--muted); font-style: italic; }
+h4 { margin: 20px 0 4px; font: 400 0.875rem/1.4 var(--serif); letter-spacing: 0.08em; text-transform: uppercase; }
+.project-link { margin-top: 20px; }
 
 @media (max-width: 720px) {
   .intro { grid-template-columns: minmax(0, 1fr); }
