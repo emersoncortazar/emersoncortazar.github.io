@@ -15,63 +15,100 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="top">
-    <a class="top-name" href="#about">Emerson Cortazar</a>
-    <nav aria-label="Main">
-      <a href="#cv">CV</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-    </nav>
+  <header class="bar caps" id="bar">
+    <nav aria-label="Main"><a href="#lab">Lab</a><a href="#projects">Projects</a><a href="#cv">CV</a><a href="#contact">Contact</a></nav>
+    <a class="wordmark" href="#top">Emerson Cortazar</a>
+    <span class="where">New York <span id="clock"></span></span>
   </header>
 
-  <main>
-    <section class="intro" id="about">
-      <div class="intro-text">
-        <h1>Emerson Cortazar</h1>
-        <p class="tagline">Duke junior interested in startups and research</p>
-        <p>I'm a junior at Duke studying electrical and computer engineering, class of 2028. I currently am studying at NYU as a visiting student through the Duke in New York - Creative Industries program. Generally, I am interested in robotics, startups, and research.</p>
+  <main id="top">
+    <section class="hero" aria-label="Engraving of Vaucanson's automata">
+      <img src="assets/img/vaucanson-hero.webp" width="2200" height="1409" alt="Engraving of three automata on pedestals: a flute player, a mechanical duck, and a tambourine player.">
+    </section>
+
+    <section class="about" id="about">
+      <div>
+        <h2 class="kicker caps">About</h2>
+        <p class="about-text">I'm a junior at Duke studying electrical and computer engineering, class of 2028. I currently am studying at NYU as a visiting student through the Duke in New York - Creative Industries program. Generally, I am interested in robotics, startups, and research.</p>
       </div>
-      <div class="intro-side">
+      <div class="about-side">
         <img src="assets/img/portrait.webp" width="800" height="1000" alt="Portrait of Emerson Cortazar in a navy blazer.">
-        <dl class="links">
-          <div><dt>Email</dt><dd><a href="mailto:efc19@duke.edu">efc19@duke.edu</a></dd></div>
-          <div><dt>GitHub</dt><dd><a href="https://github.com/emersoncortazar">emersoncortazar</a></dd></div>
-          <div><dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/emerson-cortazar">emerson-cortazar</a></dd></div>
+        <dl class="spec mono">
+          <div><dt>Education</dt><dd>Duke University, BSE Electrical &amp; Computer Engineering</dd></div>
+          <div><dt>Interests</dt><dd>Robotics, startups, research</dd></div>
         </dl>
       </div>
     </section>
 
+    <section class="block" id="lab">
+      <h2 class="kicker caps">Lab</h2>
+      <div class="lab-item">
+        <span class="mono">Sep 2026 — now</span>
+        <div>
+          <h3 class="item-title">AI4CE Lab, NYU</h3>
+          <p class="item-text">VLM input ablation for SLAM failure detection.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="projects">
+      <h2 class="kicker caps">Projects</h2>
+      <article class="project">
+        <a class="shot" href="https://ibmsubmission.vercel.app" aria-label="Open the Heat Ahead NYC live site">
+          <img src="assets/img/heatahead.webp" width="1600" height="889" alt="The Heat Ahead NYC homepage, headed Know before the cold hits, with an address search and a chart of buildings that lost heat.">
+        </a>
+        <div>
+          <p class="mono">IBM Z Datathon · Oct 2026</p>
+          <h3 class="item-title">Heat Ahead NYC</h3>
+          <p class="lede">Predictive machine learning pipeline for urban infrastructure fail-safes on enterprise hardware.</p>
+          <p class="item-text">Formed and led a six-person IBM Z Datathon team (recruiting members including graduate students) to predict heating-failure risks across NYC during extreme weather. Developed an end-to-end ML pipeline integrating historical city housing records with live weather feeds, mapping risk priority for municipal inspectors. Configured an enterprise IBM LinuxONE test environment and benchmarked batch inference performance at over 480,000 building records/sec.</p>
+          <a class="live caps" href="https://ibmsubmission.vercel.app">Visit the live site ↗</a>
+        </div>
+      </article>
+    </section>
+
     <section class="cv" id="cv">
-      <p class="cv-link"><a href="Emerson_Cortazar_CV.pdf">View CV</a></p>
+      <div class="cv-head">
+        <div><h2 class="kicker caps">CV</h2><p class="cv-title">Curriculum <span>vitae</span></p></div>
+        <a class="outline caps" href="Emerson_Cortazar_CV.pdf">Open PDF <span aria-hidden="true">↗</span></a>
+      </div>
       <div id="cv-pages" data-src="Emerson_Cortazar_CV.pdf"></div>
     </section>
 
-    <section id="research">
-      <h2>Research</h2>
-      <h3>AI4CE Lab, NYU</h3>
-      <p>VLM input ablation for SLAM failure detection.</p>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-      <article class="project">
-        <h3>Heat Ahead NYC</h3>
-        <p class="summary">Predictive machine learning pipeline for urban infrastructure fail-safes on enterprise hardware.</p>
-        <h4>The Challenge</h4>
-        <p>Formed and led a six-person IBM Z Datathon team (recruiting members including graduate students) to predict heating-failure risks across NYC during extreme weather.</p>
-        <h4>Methodology</h4>
-        <p>Developed an end-to-end ML pipeline integrating historical city housing records with live weather feeds, mapping risk priority for municipal inspectors.</p>
-        <h4>Results &amp; Impact</h4>
-        <p>Configured an enterprise IBM LinuxONE test environment and benchmarked batch inference performance at over 480,000 building records/sec.</p>
-        <p class="project-link"><a href="https://ibmsubmission.vercel.app">Live site</a></p>
-      </article>
+    <section class="contact" id="contact">
+      <div>
+        <h2 class="kicker caps">Contact</h2>
+        <p class="contact-title">Email me!</p>
+        <div class="links">
+          <a href="mailto:efc19@duke.edu"><span>efc19@duke.edu</span><span>EMAIL ↗</span></a>
+          <a href="https://www.linkedin.com/in/emerson-cortazar"><span>LinkedIn</span><span>PROFILE ↗</span></a>
+          <a href="https://github.com/emersoncortazar"><span>GitHub</span><span>CODE ↗</span></a>
+        </div>
+      </div>
+      <img src="assets/img/jazari-peacock.webp" width="1400" height="1978" alt="Manuscript painting of a peacock-shaped hand-washing automaton.">
     </section>
   </main>
 
+  <footer>
+    <p class="sign">Cortazar</p>
+    <div class="foot-row mono"><span>© 2026 EMERSON CORTAZAR</span><a href="#top">BACK TO TOP ↑</a></div>
+  </footer>
+
+  <script>
+    const clock = document.getElementById('clock');
+    const tick = () => { clock.textContent = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }); };
+    tick(); setInterval(tick, 15000);
+
+    const bar = document.getElementById('bar');
+    const hero = document.querySelector('.hero');
+    const solid = () => bar.classList.toggle('solid', scrollY > hero.offsetHeight - 80);
+    addEventListener('scroll', solid, { passive: true }); solid();
+    requestAnimationFrame(() => document.documentElement.classList.add('ready'));
+  </script>
   <script type="module" src="main.js"></script>
 </body>
 </html>
