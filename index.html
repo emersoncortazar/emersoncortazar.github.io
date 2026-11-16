@@ -15,100 +15,59 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=12">
 </head>
 <body>
-  <header class="bar caps" id="bar">
-    <nav aria-label="Main"><a href="#lab">Lab</a><a href="#projects">Projects</a><a href="#cv">CV</a><a href="#contact">Contact</a></nav>
-    <a class="wordmark" href="#top">Emerson Cortazar</a>
-    <span class="where">New York <span id="clock"></span></span>
+  <header class="bar">
+    <a class="mark" href="#top">emerson cortazar</a>
+    <nav aria-label="Main"><a href="#lab">lab</a><a href="#projects">projects</a><a href="blog.html">writing</a><a href="Emerson_Cortazar_CV.pdf">cv</a><a href="#contact">contact</a></nav>
   </header>
 
-  <main id="top">
-    <section class="hero" aria-label="Engraving of Vaucanson's automata">
-      <img src="assets/img/vaucanson-hero.webp" width="2200" height="1409" alt="Engraving of three automata on pedestals: a flute player, a mechanical duck, and a tambourine player.">
-    </section>
-
-    <section class="about" id="about">
+  <main class="page">
+    <section class="intro" id="top">
       <div>
-        <h2 class="kicker caps">About</h2>
-        <p class="about-text">I'm a junior at Duke studying electrical and computer engineering, class of 2028. I currently am studying at NYU as a visiting student through the Duke in New York - Creative Industries program. Generally, I am interested in robotics, startups, and research.</p>
+        <h1>Emerson Cortazar</h1>
+        <p class="tagline">Duke junior interested in startups and research</p>
+        <p class="about">I'm a junior at Duke studying electrical and computer engineering, class of 2028. I currently am studying at NYU as a visiting student through the Duke in New York - Creative Industries program. Generally, I am interested in robotics, startups, and research.</p>
       </div>
-      <div class="about-side">
-        <img src="assets/img/portrait.webp" width="800" height="1000" alt="Portrait of Emerson Cortazar in a navy blazer.">
-        <dl class="spec mono">
-          <div><dt>Education</dt><dd>Duke University, BSE Electrical &amp; Computer Engineering</dd></div>
-          <div><dt>Interests</dt><dd>Robotics, startups, research</dd></div>
-        </dl>
+      <img class="portrait" src="assets/img/portrait.webp" width="800" height="1000" alt="Portrait of Emerson Cortazar in a navy blazer.">
+    </section>
+
+    <section class="section" id="lab">
+      <h2 class="section-head">Lab</h2>
+      <div class="entry">
+        <p class="label muted">Sep 2026 — now</p>
+        <h3>AI4CE Lab, NYU</h3>
+        <p class="sub">VLM input ablation for SLAM failure detection.</p>
       </div>
     </section>
 
-    <section class="block" id="lab">
-      <h2 class="kicker caps">Lab</h2>
-      <div class="lab-item">
-        <span class="mono">Sep 2026 — now</span>
-        <div>
-          <h3 class="item-title">AI4CE Lab, NYU</h3>
-          <p class="item-text">VLM input ablation for SLAM failure detection.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="block" id="projects">
-      <h2 class="kicker caps">Projects</h2>
-      <article class="project">
+    <section class="section" id="projects">
+      <h2 class="section-head">Projects</h2>
+      <article class="entry">
         <a class="shot" href="https://ibmsubmission.vercel.app" aria-label="Open the Heat Ahead NYC live site">
           <img src="assets/img/heatahead.webp" width="1600" height="889" alt="The Heat Ahead NYC homepage, headed Know before the cold hits, with an address search and a chart of buildings that lost heat.">
         </a>
-        <div>
-          <p class="mono">IBM Z Datathon · Oct 2026</p>
-          <h3 class="item-title">Heat Ahead NYC</h3>
-          <p class="lede">Predictive machine learning pipeline for urban infrastructure fail-safes on enterprise hardware.</p>
-          <p class="item-text">Formed and led a six-person IBM Z Datathon team (recruiting members including graduate students) to predict heating-failure risks across NYC during extreme weather. Developed an end-to-end ML pipeline integrating historical city housing records with live weather feeds, mapping risk priority for municipal inspectors. Configured an enterprise IBM LinuxONE test environment and benchmarked batch inference performance at over 480,000 building records/sec.</p>
-          <a class="live caps" href="https://ibmsubmission.vercel.app">Visit the live site ↗</a>
-        </div>
+        <p class="label muted">Oct 2026 · IBM Z Datathon</p>
+        <h3>Heat Ahead NYC</h3>
+        <p class="sub">Predictive machine learning pipeline for urban infrastructure fail-safes on enterprise hardware.</p>
+        <p class="body">Formed and led a six-person IBM Z Datathon team (recruiting members including graduate students) to predict heating-failure risks across NYC during extreme weather. Developed an end-to-end ML pipeline integrating historical city housing records with live weather feeds, mapping risk priority for municipal inspectors. Configured an enterprise IBM LinuxONE test environment and benchmarked batch inference performance at over 480,000 building records/sec.</p>
+        <a class="go" href="https://ibmsubmission.vercel.app">visit the live site <span aria-hidden="true">↗</span></a>
       </article>
     </section>
 
-    <section class="cv" id="cv">
-      <div class="cv-head">
-        <div><h2 class="kicker caps">CV</h2><p class="cv-title">Curriculum <span>vitae</span></p></div>
-        <a class="outline caps" href="Emerson_Cortazar_CV.pdf">Open PDF <span aria-hidden="true">↗</span></a>
-      </div>
-      <div id="cv-pages" data-src="Emerson_Cortazar_CV.pdf"></div>
+    <section class="section" id="contact">
+      <h2 class="section-head">Contact</h2>
+      <ul class="contacts">
+        <li><a href="mailto:efc19@duke.edu"><span>efc19@duke.edu</span><span class="label">email ↗</span></a></li>
+        <li><a href="https://github.com/emersoncortazar"><span>github</span><span class="label">code ↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/emerson-cortazar"><span>linkedin</span><span class="label">profile ↗</span></a></li>
+        <li><a href="Emerson_Cortazar_CV.pdf"><span>cv</span><span class="label">pdf ↗</span></a></li>
+      </ul>
     </section>
 
-    <section class="contact" id="contact">
-      <div>
-        <h2 class="kicker caps">Contact</h2>
-        <p class="contact-title">Email me!</p>
-        <div class="links">
-          <a href="mailto:efc19@duke.edu"><span>efc19@duke.edu</span><span>EMAIL ↗</span></a>
-          <a href="https://www.linkedin.com/in/emerson-cortazar"><span>LinkedIn</span><span>PROFILE ↗</span></a>
-          <a href="https://github.com/emersoncortazar"><span>GitHub</span><span>CODE ↗</span></a>
-        </div>
-      </div>
-      <img src="assets/img/jazari-peacock.webp" width="1400" height="1978" alt="Manuscript painting of a peacock-shaped hand-washing automaton.">
-    </section>
+    <footer class="foot label muted">© 2026 Emerson Cortazar</footer>
   </main>
-
-  <footer>
-    <p class="sign">Cortazar</p>
-    <div class="foot-row mono"><span>© 2026 EMERSON CORTAZAR</span><a href="#top">BACK TO TOP ↑</a></div>
-  </footer>
-
-  <script>
-    const clock = document.getElementById('clock');
-    const tick = () => { clock.textContent = new Date().toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }); };
-    tick(); setInterval(tick, 15000);
-
-    const bar = document.getElementById('bar');
-    const hero = document.querySelector('.hero');
-    const solid = () => bar.classList.toggle('solid', scrollY > hero.offsetHeight - 80);
-    addEventListener('scroll', solid, { passive: true }); solid();
-    requestAnimationFrame(() => document.documentElement.classList.add('ready'));
-  </script>
-  <script type="module" src="main.js?v=2"></script>
 </body>
 </html>
