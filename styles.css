@@ -34,23 +34,31 @@ a { color: inherit; text-decoration: none; }
 .bar nav a:hover, .bar nav a[aria-current="page"] { color: var(--ink); }
 .bar nav a[aria-current="page"] { box-shadow: 0 1px 0 var(--gold); }
 
-.page { max-width: 44rem; margin: 0 auto; padding: 0 20px 64px; }
+.page { max-width: 80rem; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px) 72px; }
 
-.section { padding: clamp(72px, 12vw, 120px) 0 0; }
+/* sections: heading in a narrow left column, content filling the rest */
+.section { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 0 clamp(24px, 4vw, 64px); align-items: start; padding: clamp(72px, 10vw, 120px) 0 0; }
+.section > :not(.section-head):not(.page-title) { grid-column: 2; }
 
 /* intro: name and words on the left, portrait on the right */
-.intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 13rem); gap: clamp(28px, 5vw, 56px); align-items: end; padding-top: clamp(64px, 10vw, 110px); }
+.intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 22rem); gap: clamp(32px, 6vw, 96px); align-items: end; padding-top: clamp(64px, 9vw, 110px); }
 .portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: top; border-radius: 4px; }
-.intro h1, .page-title { margin: 0; font-size: clamp(2.75rem, 8vw, 4.5rem); font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; }
-.tagline { margin: 14px 0 0; font-size: 1.25rem; font-weight: 400; }
-.about { margin: 22px 0 0; max-width: 38rem; color: #3b414d; }
+.intro h1, .page-title { margin: 0; font-size: clamp(2.75rem, 7.5vw, 6.5rem); font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; }
+.tagline { margin: 18px 0 0; font-size: clamp(1.25rem, 2vw, 1.5rem); font-weight: 400; }
+.about { margin: 22px 0 0; max-width: 44rem; color: #3b414d; font-size: 1.125rem; }
 
 /* section headings with a gold rule trailing off */
-.section-head { display: flex; align-items: baseline; gap: 16px; margin: 0 0 18px; font-size: 1.75rem; font-weight: 400; letter-spacing: -0.02em; }
-.section-head::after { content: ""; flex: 1; height: 1px; align-self: center; background: linear-gradient(90deg, var(--gold), transparent); }
+.section-head { margin: 22px 0 0; font-size: 1.75rem; font-weight: 400; letter-spacing: -0.02em; }
+.section-head::after { content: ""; display: block; width: 56px; height: 1px; margin-top: 14px; background: var(--gold); }
+.page-title { grid-column: 1 / -1; margin-bottom: 36px; }
 
 .entry { display: block; position: relative; padding: 22px 0; border-top: 1px solid var(--rule); }
 .entry:last-child { border-bottom: 1px solid var(--rule); }
+.entry.has-shot { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0 clamp(24px, 3vw, 44px); align-items: start; }
+.entry.has-shot > * { grid-column: 2; }
+.entry.has-shot > .shot { grid-column: 1; grid-row: 1 / span 4; margin: 4px 0 0; }
+.entry.has-shot > .go { grid-row: 4; align-self: start; }
+.entry.has-shot > .body { grid-column: 1 / -1; grid-row: 5; max-width: 52rem; margin-top: 22px; }
 .shot { display: block; overflow: hidden; margin-bottom: 18px; border: 1px solid var(--rule); border-radius: 4px; }
 .shot img { display: block; width: 100%; height: auto; transition: transform .6s ease; }
 .shot:hover img { transform: scale(1.015); }
@@ -70,11 +78,20 @@ a { color: inherit; text-decoration: none; }
 .contacts a:hover { color: var(--shinsu); }
 .contacts .label { color: var(--muted); }
 
-.posts { margin-top: 32px; }
+.posts { margin-top: 0; }
 .empty { margin: 0; padding: 22px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); font-size: 1.25rem; }
 
 .foot { margin-top: 96px; padding-top: 16px; border-top: 1px solid var(--rule); }
 
+@media (max-width: 900px) {
+  .section, .entry.has-shot { grid-template-columns: minmax(0, 1fr); }
+  .section > :not(.section-head):not(.page-title), .entry.has-shot > * { grid-column: 1; }
+  .entry.has-shot > .shot, .entry.has-shot > .go, .entry.has-shot > .body { grid-row: auto; }
+  .entry.has-shot > .shot { margin: 0 0 18px; }
+  .entry.has-shot > .body { margin-top: 14px; }
+  .section-head { margin: 0 0 18px; }
+  .intro { grid-template-columns: minmax(0, 1fr) minmax(0, 15rem); }
+}
 @media (max-width: 560px) {
   .bar { flex-direction: column; align-items: flex-start; gap: 6px; }
   .intro { grid-template-columns: minmax(0, 1fr); }
